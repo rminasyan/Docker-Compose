@@ -1,0 +1,6 @@
+jobs:
+  - template: ../templates/deploy.yml
+    parameters:
+      subscription: ''
+      webAppName: ''
+      projectToDeploy: ''
