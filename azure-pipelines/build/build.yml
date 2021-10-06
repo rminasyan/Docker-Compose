@@ -1,0 +1,23 @@
+jobs:
+- job: build
+  pool:
+    vmImage: 'ubuntu-latest'
+  variables:
+    solution: '**/*.sln'
+    buildPlatform: 'Any CPU'
+    buildConfiguration: 'Release'
+    runtime: 'linux-x64'
+  steps:
+  - task: DotNetCoreCLI@2
+    displayName: Restore
+    inputs:
+      command: 'restore'
+      projects: '**/*.csproj'
+
+## ADD dotnet build task
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: '$(build.ArtifactStagingDirectory)'
+      artifact: 'project'
+      publishLocation: 'pipeline'

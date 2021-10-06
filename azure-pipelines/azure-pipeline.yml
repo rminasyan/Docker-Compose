@@ -1,0 +1,18 @@
+trigger: none
+
+stages:
+
+  - stage: Build
+    displayName: BUILD
+    jobs:
+      - template: build/build.yml
+
+  - stage: Deploy
+    displayName: Deploy
+    jobs:
+      - template: deploy/api.deploy.yml
+      
+  - stage: Deploy
+    displayName: Deploy
+    jobs:
+      - template: deploy/app.deploy.yml

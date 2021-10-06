@@ -1,0 +1,25 @@
+parameters:
+- name: subscription
+  type: string
+- name: webAppName
+  type: string
+- name: projectToDeploy
+  type: string
+
+jobs:
+  - deployment: deploy
+    displayName: "deploy"
+    pool:
+      name: "windows-latest"
+    environment: TEST
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - download: current
+            artifact: project
+          - task: AzureRmWebAppDeployment@4
+            displayName: Deploy
+            inputs:
+              azureSubscription: ${{ parameters.subscription }}
+              WebAppName: ${{ parameters.webAppName }}
