@@ -10,7 +10,7 @@ jobs:
   - deployment: deploy
     displayName: "deploy"
     pool:
-      name: "windows-latest"
+      vmImage: "windows-latest"
     environment: TEST
     strategy:
       runOnce:

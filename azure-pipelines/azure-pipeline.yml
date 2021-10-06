@@ -7,12 +7,12 @@ stages:
     jobs:
       - template: build/build.yml
 
-  - stage: Deploy
-    displayName: Deploy
+  - stage: DeployApi
+    displayName: DeployApi
     jobs:
       - template: deploy/api.deploy.yml
       
-  - stage: Deploy
-    displayName: Deploy
+  - stage: DeployApp
+    displayName: DeployApp
     jobs:
       - template: deploy/app.deploy.yml
