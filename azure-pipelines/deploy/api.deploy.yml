@@ -3,4 +3,4 @@ jobs:
     parameters:
       subscription: ''
       webAppName: ''
-      project: ''
+      projectToDeploy: ''
