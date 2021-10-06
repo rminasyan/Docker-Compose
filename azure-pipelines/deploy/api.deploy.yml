@@ -1,6 +1,6 @@
 jobs:
   - template: ../templates/deploy.yml
     parameters:
-      subscription: #service connection name
-      webAppName: #webapp name
+      subscription: ''
+      webAppName: ''
       project: ''
